@@ -28,26 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             label1 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
             label3 = new Label();
             textBox2 = new TextBox();
             button1 = new Button();
-            button2 = new Button();
             panel1 = new Panel();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
             pictureBox1 = new PictureBox();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(142, 9);
+            label1.Font = new Font("Segoe UI Variable Display Semib", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(25, 15);
             label1.Name = "label1";
-            label1.Size = new Size(103, 46);
+            label1.Size = new Size(102, 44);
             label1.TabIndex = 0;
             label1.Text = "Login";
             // 
@@ -91,30 +96,23 @@
             // button1
             // 
             button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button1.Location = new Point(105, 284);
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.Location = new Point(129, 273);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(129, 38);
             button1.TabIndex = 5;
-            button1.Text = "Login";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            button2.Location = new Point(206, 284);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 6;
-            button2.Text = "Register";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // panel1
             // 
+            panel1.Controls.Add(label6);
+            panel1.Controls.Add(label5);
+            panel1.Controls.Add(label4);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(textBox1);
             panel1.Controls.Add(label2);
@@ -126,17 +124,57 @@
             panel1.TabIndex = 7;
             panel1.Paint += panel1_Paint;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Cursor = Cursors.Hand;
+            label6.ForeColor = Color.Red;
+            label6.Location = new Point(165, 63);
+            label6.Name = "label6";
+            label6.Size = new Size(49, 15);
+            label6.TabIndex = 8;
+            label6.Text = "Register";
+            label6.Click += label6_Click;
+            // 
+            // label5
+            // 
+            label5.Location = new Point(0, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(100, 23);
+            label5.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(36, 63);
+            label4.Name = "label4";
+            label4.Size = new Size(131, 15);
+            label4.TabIndex = 7;
+            label4.Text = "Don't have an account?";
+            // 
             // pictureBox1
             // 
-            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            pictureBox1.BackgroundImage = Properties.Resources.LOG_IN;
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(99, 107);
+            pictureBox1.Location = new Point(42, 15);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(194, 116);
+            pictureBox1.Size = new Size(300, 300);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // panel2
+            // 
+            panel2.AutoSize = true;
+            panel2.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            panel2.Controls.Add(pictureBox1);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(385, 331);
+            panel2.TabIndex = 8;
             // 
             // Login
             // 
@@ -144,8 +182,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AntiqueWhite;
             ClientSize = new Size(778, 331);
-            Controls.Add(pictureBox1);
+            Controls.Add(panel2);
             Controls.Add(panel1);
+            MinimumSize = new Size(794, 370);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -153,7 +192,9 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -164,8 +205,11 @@
         private Label label3;
         private TextBox textBox2;
         private Button button1;
-        private Button button2;
         private Panel panel1;
         private PictureBox pictureBox1;
+        private Panel panel2;
+        private Label label4;
+        private Label label5;
+        private Label label6;
     }
 }
