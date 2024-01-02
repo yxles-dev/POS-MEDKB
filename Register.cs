@@ -17,22 +17,6 @@ namespace POS_MEDKB
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string username = textBox1.Text;
-            string password = textBox2.Text;
-            string dataToWrite = $"{username}|{password}";
-            string filePath = "account.txt";
-            WriteToFile(filePath, dataToWrite, true);
-
-            Debug.WriteLine(username + ":" + password);
-            Debug.WriteLine("account written successfully");
-            MessageBox.Show("Account Created Successfully", "Registration Complete");
-            this.Hide();
-            Login login = new Login();
-            login.Show();
-        }
         static void WriteToFile(string filePath, string data, bool append)
         {
             // Use StreamWriter to write data to the file
@@ -40,6 +24,36 @@ namespace POS_MEDKB
             {
                 // Write the data to the file
                 writer.WriteLine(data);
+            }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login login = new Login();
+            login.Show();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Please input a username and password");
+            }
+            else
+            {
+                string username = textBox1.Text;
+                string password = textBox2.Text;
+                string dataToWrite = $"{username}|{password}";
+                string filePath = "account.txt";
+                WriteToFile(filePath, dataToWrite, true);
+
+                Debug.WriteLine(username + ":" + password);
+                Debug.WriteLine("account written successfully");
+                MessageBox.Show("Account Created Successfully", "Registration Complete");
+                this.Hide();
+                Login login = new Login();
+                login.Show();
             }
         }
     }
