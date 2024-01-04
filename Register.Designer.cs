@@ -39,19 +39,21 @@
             label1 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            checkBox1 = new CheckBox();
             SuspendLayout();
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(72, 190);
+            textBox2.Location = new Point(72, 178);
             textBox2.Name = "textBox2";
+            textBox2.PasswordChar = '*';
             textBox2.Size = new Size(252, 23);
             textBox2.TabIndex = 9;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(72, 172);
+            label3.Location = new Point(72, 160);
             label3.Name = "label3";
             label3.Size = new Size(60, 15);
             label3.TabIndex = 8;
@@ -60,7 +62,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(72, 103);
+            label2.Location = new Point(72, 91);
             label2.Name = "label2";
             label2.Size = new Size(63, 15);
             label2.TabIndex = 7;
@@ -68,7 +70,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(72, 121);
+            textBox1.Location = new Point(72, 109);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(252, 23);
             textBox1.TabIndex = 6;
@@ -120,11 +122,24 @@
             guna2Button2.Text = "Register";
             guna2Button2.Click += guna2Button2_Click;
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(72, 206);
+            checkBox1.Margin = new Padding(2);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 19);
+            checkBox1.TabIndex = 13;
+            checkBox1.Text = "Show Password";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(397, 316);
+            Controls.Add(checkBox1);
             Controls.Add(guna2Button2);
             Controls.Add(guna2Button1);
             Controls.Add(textBox2);
@@ -148,5 +163,6 @@
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private CheckBox checkBox1;
     }
 }

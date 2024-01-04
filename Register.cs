@@ -38,6 +38,7 @@ namespace POS_MEDKB
         {
             if (textBox1.Text == "" || textBox2.Text == "")
             {
+                System.Media.SystemSounds.Asterisk.Play();
                 MessageBox.Show("Please input a username and password");
             }
             else
@@ -54,6 +55,19 @@ namespace POS_MEDKB
                 this.Hide();
                 Login login = new Login();
                 login.Show();
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (textBox2.PasswordChar == '*')
+            {
+                string a = textBox2.Text;
+                textBox2.PasswordChar = '\0';
+            }
+            else
+            {
+                textBox2.PasswordChar = '*';
             }
         }
     }

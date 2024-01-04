@@ -36,6 +36,7 @@
             textBox2 = new TextBox();
             button1 = new Button();
             panel1 = new Panel();
+            checkBox1 = new CheckBox();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -49,10 +50,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Variable Display Semib", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Microsoft Sans Serif", 24.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(25, 15);
             label1.Name = "label1";
-            label1.Size = new Size(102, 44);
+            label1.Size = new Size(101, 38);
             label1.TabIndex = 0;
             label1.Text = "Login";
             // 
@@ -108,6 +109,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(checkBox1);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
             panel1.Controls.Add(label4);
@@ -123,6 +125,18 @@
             panel1.Size = new Size(387, 331);
             panel1.TabIndex = 7;
             panel1.Paint += panel1_Paint;
+            // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(67, 216);
+            checkBox1.Margin = new Padding(2);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(108, 19);
+            checkBox1.TabIndex = 11;
+            checkBox1.Text = "Show Password";
+            checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // label6
             // 
@@ -211,5 +225,6 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private CheckBox checkBox1;
     }
 }

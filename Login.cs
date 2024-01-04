@@ -22,16 +22,19 @@ namespace POS_MEDKB
 
             if (inCooldown)
             {
+                System.Media.SystemSounds.Asterisk.Play();
                 MessageBox.Show("Please wait for the remaining time before logging in.");
                 return;
             }
 
             if (textBox1.Text == "" && textBox2.Text == "")
             {
+                System.Media.SystemSounds.Asterisk.Play();
                 MessageBox.Show("Input a credential");
             }
             else if (tries >= 3)
             {
+                System.Media.SystemSounds.Asterisk.Play();
                 Debug.WriteLine("Executed");
                 inCooldown = true;
                 this.Enabled = false;
@@ -60,12 +63,14 @@ namespace POS_MEDKB
                     }
                     else
                     {
+                        System.Media.SystemSounds.Asterisk.Play();
                         MessageBox.Show("Wrong Account Credential", "Login Error");
                     }
 
                 }
                 catch (System.IO.FileNotFoundException)
                 {
+                    System.Media.SystemSounds.Asterisk.Play();
                     Debug.WriteLine("Triggered System.IO.FileNotFoundException");
                     MessageBox.Show("Wrong Account Credential", "Login Error");
                 }
@@ -143,6 +148,19 @@ namespace POS_MEDKB
             // (Deniel) use ShowDialog instead of Show() to be able to
             // make this form a parent
             register.ShowDialog(this);
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (textBox2.PasswordChar == '*')
+            {
+                string a = textBox2.Text;
+                textBox2.PasswordChar = '\0';
+            }
+            else
+            {
+                textBox2.PasswordChar = '*';
+            }
         }
     }
 }
